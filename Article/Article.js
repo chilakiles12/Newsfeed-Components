@@ -1,12 +1,12 @@
 // Because classes are not hoisted you will need to start your code at the bottom of the page.  Look for the comment "START HERE"
 
 class Article {
-  constructor(article) {
+  constructor(element) {
     // assign this.domElement to the passed in domElement
 
-    this.domElement = article;
+    this.domElement = element;
     // create a reference to the ".expandButton" class.
-    this.expandButton = article.querySelector('.expandButton');
+    this.expandButton = element.querySelector('.expandButton');
 
     // Using your expandButton reference, update the text on your expandButton to say "expand"
     this.expandButton.textContent = 'expand';
@@ -29,7 +29,7 @@ class Article {
 
 */
 
-let articles = document
-  .querySelectorAll('.article')
-  .forEach(article => new Article(article));
+let articles = document.querySelectorAll('.article').forEach(element => {
+  new Article(element);
+});
 console.log(articles);
